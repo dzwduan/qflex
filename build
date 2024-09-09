@@ -3,7 +3,7 @@
 set -e
 
 SIM=${1:-keenkraken}
-BUILD_TYPE=${2:-release}
+BUILD_TYPE=${2:-debug}
 CUSTOM_GCC=${3:-system}
 
 FLEXUS_ROOT=$(realpath flexus)
@@ -30,7 +30,8 @@ case $SIM in
                         --enable-libqflex                   \
                         --enable-debug                      \
                         --extra-cflags="-fsanitize=address" \
-                        --extra-cflags="-fno-omit-frame-pointer"
+                        --extra-cflags="-fno-omit-frame-pointer" \
+                        --extra-cflags="-shared-libsan -fsanitize=address "
 
         else
             ./configure --target-list=aarch64-softmmu       \

@@ -35,9 +35,23 @@ The following packages should be installed to build QFlex
 git clone --recursive https://github.com/parsa-epfl/qflex
 ```
 
+需要提前安装
+```sh
+sudo apt install libfuse3-dev
+sudo apt install ibdw-dev
+sudo apt install libbpf-dev
+sudo apt install gcc-13 g++-13
+```
+
+if ubuntu 20, refer https://www.autumnrivulet.com/blogs/install-gcc-13-on-ubuntu-20/
+
+
 ### 3. Build QEMU
 
 ```sh
+cd qemu 
+git submodule init && git submodule update
+cd ..
 ./build cq
 ```
 

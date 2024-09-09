@@ -10,3 +10,6 @@
 	path = libqflex
 	url = https://github.com/dzwduan/libqflex.git
 	branch = master
+[submodule "xdp-tools"]
+	path = xdp-tools
+	url = https://github.com/xdp-project/xdp-tools
